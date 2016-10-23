@@ -29,9 +29,14 @@
         }
       }
       function check_guess(guess, randomColor, colors) {
-        // Return true if guess is correct else return false
-
-        return (guess === randomColor);
+        // If the color is not in the list of colors, alert the user and return false
+        if (colors.indexOf(guess) === -1) {
+          alert("I don’t recognize that color!");
+          return false;
+        } else {
+          // Else return true if the guess is correct
+          return (guess === randomColor);
+        }
       }
     </script>
   </body>
