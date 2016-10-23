@@ -34,12 +34,16 @@
           alert("I don’t recognize that color!");
           return false;
         } else if (guess > randomColor) {
+          // Alert the user if the guess is alphabetically higher than the random color selected and return false
           alert("Your input is alphabetically higher than mine!");
           return false;
-        }
-        else {
-          // Else return true if the guess is correct
-          return (guess === randomColor);
+        } else if (guess < randomColor) {
+          // Alert the user if the guess is alphabetically lower than the random color selected and return false
+          alert("Your input is alphabetically lower than mine!");
+          return false;
+        } else {
+          // Else return true
+          return true;
         }
       }
     </script>
