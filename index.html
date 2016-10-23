@@ -17,13 +17,20 @@
         var colors = ["blue", "green", "orange", "purple", "red", "yellow"];
         // Choose a random color
         var randomColor = colors[Math.floor(Math.random() * colors.length)];
-        // Display the random color for testing in the console
-        console.log(randomColor);
+        // Display the random color for testing as an alert
+        alert(randomColor);
         // Ask the user for a guess
         var guess = prompt("I am thinking of one of these colors: \n\n" +
           colors.join(', ') + '\n\n' + "What color am I thinking of?");
-        // Tell the user what his guess was
-        alert(guess);
+        // While the guesses are incorrect, ask the user for another guess
+        while (!checkGuess(guess, randomColor)) {
+          var guess = prompt("I am thinking of one of these colors: \n\n" +
+          colors.join(', ') + '\n\n' + "What color am I thinking of?");
+        }
+      }
+      function checkGuess(guess, randomColor) {
+        // Return true if guess is correct else return false
+        return (guess === randomColor);
       }
     </script>
   </body>
