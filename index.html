@@ -19,6 +19,8 @@
         var randomColor = colors[Math.floor(Math.random() * colors.length)];
         // Display the random color for testing as an alert
         alert(randomColor);
+        // Keep track of the number of guesses
+        var numOfGuesses = 1;
         // Ask the user for a guess
         var guess = prompt("I am thinking of one of these colors: \n\n" +
           colors.join(', ') + '\n\n' + "What color am I thinking of?");
@@ -26,11 +28,14 @@
         while (!check_guess(guess, randomColor, colors)) {
           var guess = prompt("I am thinking of one of these colors: \n\n" +
           colors.join(', ') + '\n\n' + "What color am I thinking of?");
+          numOfGuesses++; // Increase the number of guesses by one
         }
+        // When the user has exited out of the loop, display the number of guesses
+        alert("You are right! You took " + numOfGuesses + " guess(es)!")
       }
       function check_guess(guess, randomColor, colors) {
-        // If the color is not in the list of colors, alert the user and return false
         if (colors.indexOf(guess) === -1) {
+          // If the color is not in the list of colors, alert the user and return false
           alert("I don’t recognize that color!");
           return false;
         } else if (guess > randomColor) {
