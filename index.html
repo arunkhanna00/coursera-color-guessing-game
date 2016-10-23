@@ -33,7 +33,11 @@
         if (colors.indexOf(guess) === -1) {
           alert("I don’t recognize that color!");
           return false;
-        } else {
+        } else if (guess > randomColor) {
+          alert("Your input is alphabetically higher than mine!");
+          return false;
+        }
+        else {
           // Else return true if the guess is correct
           return (guess === randomColor);
         }
