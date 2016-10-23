@@ -13,7 +13,11 @@
     <script>
       runGame();
       function runGame() {
-        var guess = prompt("What color am I thinking of");
+        // initialize colors in alphabetical order
+        var colors = ["blue", "green", "orange", "purple", "red", "yellow"]
+
+        var guess = prompt("I am thinking of one of these colors: \n\n" +
+          colors.join(', ') + '\n\n' + "What color am I thinking of?");
         alert(guess);
       }
     </script>
