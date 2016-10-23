@@ -11,8 +11,8 @@
   </head>
   <body>
     <script>
-      doGame();
-      function doGame() {
+      do_game();
+      function do_game() {
         // Initialize colors in alphabetical order
         var colors = ["black", "blue", "brown", "cyan", "gold", "green", "lime", "maroon", "olive", "orange", "purple", "red", "yellow"];
         // Choose a random color
@@ -23,12 +23,12 @@
         var guess = prompt("I am thinking of one of these colors: \n\n" +
           colors.join(', ') + '\n\n' + "What color am I thinking of?");
         // While the guesses are incorrect, ask the user for another guess
-        while (!checkGuess(guess, randomColor)) {
+        while (!check_guess(guess, randomColor)) {
           var guess = prompt("I am thinking of one of these colors: \n\n" +
           colors.join(', ') + '\n\n' + "What color am I thinking of?");
         }
       }
-      function checkGuess(guess, randomColor) {
+      function check_guess(guess, randomColor) {
         // Return true if guess is correct else return false
         return (guess === randomColor);
       }
