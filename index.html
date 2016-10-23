@@ -47,7 +47,9 @@
           alert("Your input is alphabetically lower than mine!");
           return false;
         } else {
-          // Else return true
+          // Else return true and set the background color of the body to the guess
+          myBody=document.getElementsByTagName("body")[0];
+          myBody.style.background = guess;
           return true;
         }
       }
