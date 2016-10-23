@@ -23,13 +23,14 @@
         var guess = prompt("I am thinking of one of these colors: \n\n" +
           colors.join(', ') + '\n\n' + "What color am I thinking of?");
         // While the guesses are incorrect, ask the user for another guess
-        while (!check_guess(guess, randomColor)) {
+        while (!check_guess(guess, randomColor, colors)) {
           var guess = prompt("I am thinking of one of these colors: \n\n" +
           colors.join(', ') + '\n\n' + "What color am I thinking of?");
         }
       }
-      function check_guess(guess, randomColor) {
+      function check_guess(guess, randomColor, colors) {
         // Return true if guess is correct else return false
+
         return (guess === randomColor);
       }
     </script>
